@@ -1,0 +1,121 @@
+body {
+  background-color: orange;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-areas:
+  ". . . . . . . ."
+  ". . . a a . . . "
+  ". . . a a . . ."
+  ". . . a a . . ."
+  ". . . a a . . ."
+  ". . . . . . . .";
+  grid-auto-rows: 100px;
+  grid-gap: 10px;
+
+}
+.calc-container {
+  padding: 10px 10px 10px 10px;
+  width: 80%;
+  border: 8px solid black;
+  border-radius: 2%;
+  grid-area: a;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+  "t t t t"
+  "d d d d"
+  "d d d d"
+  "c c v u"
+  "e f g s"
+  "h i j r"
+  "k l m q"
+  "n n o p";
+  grid-gap: 5px;
+
+}
+.title {
+  justify-self: center;
+  align-self: center;
+  grid-area: t;
+}
+button {
+  border-radius: 5%;
+  font-size: 1.5em;
+  background-color: white;
+  border: 2px solid black;
+
+}
+button:active {
+  background-color: #ededed;
+}
+input {
+  color: black;
+  height: 75%;
+  width: 100%;
+  text-align: right;
+  font-size: 2.5em;
+  padding: 0;
+  background-color: white;
+  border: 1px solid black;
+}
+.display {
+  width: 100%
+  align-self: center;
+  grid-area: d;
+}
+.num-7 {
+  grid-area: e;
+}
+.num-8 {
+  grid-area: f;
+}
+.num-9 {
+  grid-area: g;
+}
+.num-4 {
+  grid-area: h;
+}
+.num-5 {
+  grid-area: i;
+}
+.num-6 {
+  grid-area: j;
+}
+.num-1 {
+  grid-area: k;
+}
+.num-2 {
+  grid-area: l;
+}
+.num-3 {
+  grid-area: m;
+}
+.Numpad0 {
+  grid-area: n;
+}
+.dot {
+  grid-area: o;
+}
+.divide {
+  grid-area: u;
+}
+.multiply {
+  grid-area: s;
+}
+.subtract {
+  grid-area: r;
+}
+.add {
+  grid-area: q;
+}
+.equal {
+  grid-area: p;
+}
+.clear {
+  grid-area: c;
+}
+.back {
+  grid-area: v;
+}
