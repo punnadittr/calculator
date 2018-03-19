@@ -13,7 +13,6 @@ body {
   ". . . . . . . .";
   grid-auto-rows: 100px;
   grid-gap: 10px;
-
 }
 .calc-container {
   padding: 10px 10px 10px 10px;
@@ -33,7 +32,6 @@ body {
   "k l m q"
   "n n o p";
   grid-gap: 5px;
-
 }
 .title {
   justify-self: center;
@@ -45,7 +43,6 @@ button {
   font-size: 1.5em;
   background-color: white;
   border: 2px solid black;
-
 }
 button:active {
   background-color: #ededed;
@@ -64,33 +61,6 @@ input {
   width: 100%
   align-self: center;
   grid-area: d;
-}
-.num-7 {
-  grid-area: e;
-}
-.num-8 {
-  grid-area: f;
-}
-.num-9 {
-  grid-area: g;
-}
-.num-4 {
-  grid-area: h;
-}
-.num-5 {
-  grid-area: i;
-}
-.num-6 {
-  grid-area: j;
-}
-.num-1 {
-  grid-area: k;
-}
-.num-2 {
-  grid-area: l;
-}
-.num-3 {
-  grid-area: m;
 }
 .Numpad0 {
   grid-area: n;
