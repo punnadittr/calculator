@@ -30,11 +30,11 @@ for (let l = 0; l < operatorButtons.length; l++) {
   operatorButtons[l].addEventListener('click', function(e) {
     appendOperator(e.target.innerText);
   })
-};
+}
 for (let i = 0; i < numButtons.length; i++) {
   numButtons[i].addEventListener('click', function(e) {
   appendValue(e.target.innerText);
-});
+  });
 }
 backButton.addEventListener('click', back);
 equalButton.addEventListener('click', operate);
