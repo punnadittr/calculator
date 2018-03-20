@@ -1,5 +1,5 @@
+const operatorRegEx = /[\/\*\+\-]/
 const display = document.querySelector('.display-text')
-display.value = '';
 const numButtons = Array.from(document.querySelectorAll('.display-button'));
 const operatorButtons = Array.from(document.querySelectorAll('.operator-button'));
 const equalButton = document.querySelector('.equal-button');
@@ -11,13 +11,31 @@ let operatorClicked = false;
 let displayDigits;
 let checkValue;
 
+window.addEventListener('keydown', function(e) {
+  if (e.key <= 9 && e.key >= 0 && e.key != ' ') {
+    appendValue(e.key);
+  }
+  else if (operatorRegEx.test(e.key)) {
+    appendOperator(e.key);
+  }
+  else if (e.key == "Backspace") {back();}
+  else if (e.key == '.') {addDot();}
+  else if (e.key == 'Escape') {clearDisplay();}
+  else if (e.key == 'Enter') {operate();}
+  else {
+    return;
+  }
+});
 for (let l = 0; l < operatorButtons.length; l++) {
-  operatorButtons[l].addEventListener('click', appendOperator)
+  operatorButtons[l].addEventListener('click', function(e) {
+    appendOperator(e.target.innerText);
+  })
 };
-
 for (let i = 0; i < numButtons.length; i++) {
-  numButtons[i].addEventListener('click', appendValue);
-};
+  numButtons[i].addEventListener('click', function(e) {
+  appendValue(e.target.innerText);
+});
+}
 backButton.addEventListener('click', back);
 equalButton.addEventListener('click', operate);
 clearButton.addEventListener('click', clearDisplay);
@@ -26,23 +44,25 @@ dotButton.addEventListener('click', addDot);
 function clearDisplay() {
   display.value = '';
 };
-function appendValue(e) {
+function appendValue(target) {
   if (display.value.length >= 16) {
     alert("Only supports 16 digits");
     return;
   }
   else {
-  display.value += e.target.innerText;
+  display.value += target;
   operatorClicked = false;
   }
 };
-function appendOperator(e) {
+function appendOperator(target) {
   if (operatorClicked != true) {
-  display.value += e.target.innerText;
+  display.value += target;
   dotClicked = false;
   operatorClicked = true;
   }
-  else {return;};
+  else {
+    return;
+  };
 };
 function operate() {
   checkValue = Math.round(eval(display.value) * 10000000000) / 10000000000;
@@ -59,9 +79,9 @@ function back() {
   display.value = display.value.slice(0, -1);
   operatorClicked = false;
 };
-function addDot(e) {
+function addDot() {
   if (dotClicked == false) {
-    display.value += e.target.innerText;
+    display.value += '.';
     dotClicked = true;
   }
   else {
