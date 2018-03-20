@@ -1,12 +1,6 @@
 body {
   background-color: none;
 }
-
-@media screen and (max-width: 500px) {
-  .calc-container {
-    flex-grow: 1;
-  }
-}
 .wrapper {
   display: flex;
   justify-content: center;
@@ -30,6 +24,12 @@ body {
   "k l m q"
   "n n o p";
   grid-gap: 5px;
+}
+@media screen and (max-width: 500px) {
+  .calc-container {
+    flex-grow: 1;
+    border: 0;
+  }
 }
 .title {
   justify-self: center;
