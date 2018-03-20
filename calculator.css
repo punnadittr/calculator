@@ -1,6 +1,12 @@
 body {
   background-color: none;
 }
+
+@media screen and (max-width: 500px) {
+  .calc-container {
+    flex-grow: 1;
+  }
+}
 .wrapper {
   display: flex;
   justify-content: center;
